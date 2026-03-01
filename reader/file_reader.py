@@ -7,7 +7,7 @@ try:
     if structure_id.isdigit():
         raise ValueError('PDB structure code is only digits')
     if len(structure_id) != 4:
-        raise ValueError('PDB structure code must be 4 digits')
+        raise ValueError('PDB structure code must be conventional')
 finally:
     pass
 
@@ -17,9 +17,3 @@ def read_pdb(structure_id):
     filename = f'{structure_id}.pdb'
     structure = par.get_structure(structure_id, filename)
     return structure[0]
-
-
-model = read_pdb(structure_id)
-
-if model:
-    print(f'Successfully loaded Model {model.id} for {structure_id}')
