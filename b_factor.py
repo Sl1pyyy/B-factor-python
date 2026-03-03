@@ -9,7 +9,7 @@ if model_pdb:
 residue_b_factors = []
 
 def b_calc(model_pdb):
-    """Function to calculate b-factors"""
+    """Function to calculate b-factors values for each residue and print out as a list"""
     for chain in model_pdb:
         print(f'The calculation of b-factors for chain {chain.id}:')
         for residue in chain:
